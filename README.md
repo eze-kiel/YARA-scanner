@@ -1,11 +1,12 @@
 # YARA scanner
 [![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
 
-The original goal of this program is to be launched from a cron job. This is whhy there is no command line interface, everything is provided in the config file. It definitely should be used in parallel with [Zeek](https://zeek.org/), as seen in this [Black Hat Talk](https://i.blackhat.com/USA-19/Wednesday/us-19-Bernal-Detecting-Malicious-Files-With-YARA-Rules-As-They-Traverse-the-Network-wp.pdf) from David Bernal.
+## Context
+The original goal of this program is to be launched from a cron job. This is why there is no command line interface, everything is provided in the config file. It definitely should be used in parallel with [Zeek](https://zeek.org/), as seen in this [Black Hat Talk](https://i.blackhat.com/USA-19/Wednesday/us-19-Bernal-Detecting-Malicious-Files-With-YARA-Rules-As-They-Traverse-the-Network-wp.pdf) from David Bernal.
 
 ## What it does
 1. It parses config.json. You can provide the path to the config file in argument. Otherwise, it will look in its own folder.
-2. It launches recursive YARA scan with given rules on the folder specified in config files.
+2. It launches recursive YARA scan with given rules on the folder specified in config file.
 3. If it detects some infected files, it sends a mail to the recipient provided in config file to warn him.
 4. If the `mail.attachInfected` parameter is set to `true`, it will zip the infected files and attach infected_files.zip to the mail.
 5. Once the mail is sent, and if the `quarantine.destroyInfectedFiles` parameter is set to `true`, it will wipe infected files.
