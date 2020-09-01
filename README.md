@@ -8,7 +8,7 @@ The original goal of this program is to be launched from a cron job. This is whh
 2. It launches recursive YARA scan with given rules on the folder specified in config files.
 3. If it detects some infected files, it sends a mail to the recipient provided in config file to warn him.
 4. If the `mail.attachInfected` parameter is set to `true`, it will zip the infected files and attach infected_files.zip to the mail.
-5. Once the mail sent, and if the `quarantine.destroyInfectedFiles` parameter is set to `true`, it will wipe infected files.
+5. Once the mail is sent, and if the `quarantine.destroyInfectedFiles` parameter is set to `true`, it will wipe infected files.
 6. Otherwise, if the `quarantine.enabled` value is set to `true`, it will move the infected files into the `quarantineDir` provided in config file.
 
 
@@ -48,9 +48,9 @@ Note that if `quarantine.enabled` and `quarantine.destroyInfectedFiles` are both
 ```
 git clone https://github.com/eze-kiel/YARA-scanner.git
 ```
-2. Build the binary :
+2. Go to the repo folder and build the binary :
 ```
-go build main.go
+cd YARA-scanner && go build .
 ```
 3. Rename mock-config.json to config.json :
 ```
