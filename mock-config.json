@@ -1,0 +1,20 @@
+{
+    "rulesPath": "/path/to/yara/rules",
+    "filesDir": "/path/to/files/to/scan",
+    "quarantine": {
+        "enabled": true,
+        "quarantineDir": "/path/to/quarantine/directory",
+        "destroyInfectedFiles": false
+    },
+    "mail":{
+        "smtpServ": "smtp.host.com",
+        "smtpPort": "587",
+        "from": "example@domain.com",
+        "to": "example@domain.com",
+        "password": "big-fat-pass",
+        "subject": "YARA alert!",
+        "nickname": "YARA feedback",
+        "attachInfected": true,
+        "maxAttachementSize": 10
+    }
+}
